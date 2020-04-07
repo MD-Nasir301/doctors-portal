@@ -1,0 +1,84 @@
+.calender {
+    margin-top: 55px;
+    padding-left: 20px;
+}
+.calender h1 {
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+.react-calendar {
+    width: 440px;
+    max-width: 100%;
+    background: white;
+     border: none;
+     font-family: inherit;
+    padding: 40px 15px;
+    box-shadow: 0px 6px 14px 0px #e6cbcb;
+}
+.react-calendar__navigation {
+    height: 80px;
+    font-size: 22px;
+}
+.react-calendar__month-view__weekdays {
+    font-size: 15px;
+}
+button.react-calendar__navigation__label {
+    font-weight: 600;
+    color:rgb(197, 166, 166)
+}
+calendar__navigation__label {
+    font-weight: 600;
+    color: #97a7b7;
+}
+button.react-calendar__navigation__arrow.react-calendar__navigation__next2-button {
+    display: none;
+}
+button.react-calendar__navigation__arrow.react-calendar__navigation__prev2-button {
+    display: none;
+}
+button.react-calendar__navigation__arrow.react-calendar__navigation__next-button {
+    font-size: 50px;
+    font-weight: 100;
+    color: gray;
+}
+button.react-calendar__navigation__arrow.react-calendar__navigation__prev-button {
+    font-size: 50px;
+    font-weight: 100;
+    color: gray;
+}
+.react-calendar__month-view__weekdays {
+    margin-bottom: 30px;
+}
+.react-calendar button {
+    line-height: 30px;
+}
+.react-calendar__tile--active {
+    background: #728ca7;
+    border-radius: 15px;
+}
+.react-calendar__tile--active:enabled:hover, .react-calendar__tile--active:enabled:focus {
+    background: #67b0fd;
+}
+.appointment-area {
+    text-align: center;
+    padding: 50px;
+}
+.appointment-area h2 {
+    color: rgb(25, 189, 183);
+    margin-bottom: 40px;
+}
+.single-appointment {
+    padding: 30px 30px;
+    box-shadow: 1px 3px 10px 0px #e0d9d9;
+    margin-bottom: 70px;
+}
+.single-appointment h3 {
+    color: rgb(64, 190, 186);
+}
+.single-appointment h5 {
+   font-weight: 700;
+}
+.single-appointment p {
+    color: rgb(74, 197, 193);
+    font-weight: 500;
+}

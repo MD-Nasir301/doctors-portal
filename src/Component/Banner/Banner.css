@@ -1,0 +1,49 @@
+.banner-area {
+    min-height: 700px;
+    position: relative;
+    padding: 10px 50px 50px;
+}
+.banner-area::after {
+    content: "";
+    background: url('../../images/Mask\ Group\ 1.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
+  }
+  .banner-left {
+    padding-right: 150px;
+    margin-top: 50px;
+}
+.banner-left  h1{
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+.banner-left  p{
+    color: #AFB0B0;
+    margin-bottom: 50px;
+}
+.my-btn {
+    padding: 10px 20px;
+    background: #9191d4;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-radius: 2px;
+    display: inline-block;
+    text-decoration: none;
+}
+.my-btn:hover {
+    color: rgb(238, 221, 221);
+}
+.banner-img {
+    padding: 70px 85px 0px 0px;
+}
+.banner-img img {
+    width: 100%;
+}

@@ -1,0 +1,80 @@
+.page-wrapper {
+    display: flex;
+}
+.dashboard-area,.patients-area {
+    width: 73%;
+    padding: 30px;
+}
+.dashboard-area,.patients-area h4 {
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.status-bar {
+    margin-bottom: 60px;
+}
+.apm-status-box {
+    border-radius: 10px;
+    padding: 15px;
+    font-size: 18px;
+}
+.apm-status-box.pending-apm {
+    background: #F1536E;
+}
+.apm-status-box.today-apm {
+    background: #3DA5F4;
+}
+.apm-status-box.total-apm {
+    background: #00C689;
+}
+.apm-status-box.total-patients {
+    background: #FDA006;
+}
+.apm-status-box h1 {
+    color: #fff;
+    font-size: 45px;
+    margin: -5px 0px;
+    padding: 0px;
+}
+.apm-status-box p {
+    margin: 0px 0px 0px -20px;
+    padding: 0px;
+    /* margin: 2px; */
+    color: #fff;
+}
+.recent-appointment,.all-patient {
+    padding: 20px 50px;
+}
+.recent-apm-heading,.allpatient-heading p {
+    color: gray;
+    font-size: 18px;
+    font-weight: 500;
+}
+.recent-apm-table-area,.all-patients-table-area {
+    padding: 0px 0px 0px 15px;
+}
+table.recent-apm-table,.all-patients-table {
+    width: 100%;
+}
+
+table.recent-apm-table th,.all-patients-table th {
+    color: gray;
+    font-size: 15px;
+}
+table.recent-apm-table tr,.all-patients-table tr {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+table.recent-apm-table tr td,.all-patients-table tr td {
+    font-weight: 600;
+    font-size: 15px;
+}
+tr.apmRow td {
+    width: 125px;
+}
+.btn2 {
+    border: none;
+    padding: 4px 15px;
+    float: right;
+    margin-right: 10px;
+}

@@ -5,6 +5,7 @@
 .sidebar {
     width: 20%;
 }
+
 .appointments-list-area {
     width: 75%;
 }
@@ -38,6 +39,9 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
+}
+.apm-list-table table tr th,td {
+    width: 125px;
 }
 .apm-list-table table tr th {
     color: gray;

@@ -1,6 +1,8 @@
 .sidebar-area {
     background: #17D2B7;
     min-height: 100vh;
+    position: fixed;
+    width: 20%;
 }
 
 ul.sidebar-ul {

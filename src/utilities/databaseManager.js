@@ -1,10 +1,10 @@
 const getUser = () => {
-    const existingUser = localStorage.getItem('userId');
+    const existingUser = sessionStorage.getItem('userId');
     if (existingUser) {
         return existingUser; 
     } else {
         const newUser = 'user-' + new Date().getTime();
-        localStorage.setItem('userId', newUser)
+        sessionStorage.setItem('userId', newUser)
         return newUser;
     }
 }
@@ -40,3 +40,36 @@ const processOrder = (cart) => {
 
 
 export { addToDatabaseCart, getDatabaseCart, removeFromDatabaseCart, processOrder };
+
+
+// polyfill to support older browser
+const localStorage = window.localStorage || (() => {
+  let store = {}
+  return {
+    getItem(key) {
+      return store[key]
+    },
+    setItem(key, value) {
+      store[key] = value.toString()
+    },
+    clear() {
+      store = {}
+    }
+  };
+})()
+
+const sessionStorage = window.sessionStorage || (() => {
+  let store = {}
+  return {
+    getItem(key) {
+      return store[key]
+    },
+    setItem(key, value) {
+      store[key] = value.toString()
+    },
+    clear() {
+      store = {}
+    }
+  };
+})()
+// end of poly fill

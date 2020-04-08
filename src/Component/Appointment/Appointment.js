@@ -4,13 +4,13 @@ import 'react-calendar/dist/Calendar.css';
 import img from '../../images/Mask Group 1.png'
 import './Appointment.css';
 import Nav from '../Nav/Nav';
+import { getDatabaseCart } from '../../utilities/databaseManager';
 
 const Appointment = () => {
     const monthNames = ["January", "February", "March", "April", "May", "June",
                 "July", "August", "September", "October", "November", "December"
                 ];
     const [newDate,setNewDate] = useState(new Date())
-
     const date = newDate.getDate()
     const month = newDate.getMonth()
     const year = newDate.getFullYear()
@@ -19,8 +19,16 @@ const Appointment = () => {
     const onChange = (date)=> {
         setNewDate(date)
     }
-    const handleDate = ()=>{
-        console.log("aaaaaaaaaaa",fullDate);
+
+    let appointmentData = {"date":fullDate}
+    const handleAppointment = (appointment)=>{
+        appointmentData.appointmentName= appointment
+
+       let myObj = JSON.stringify(appointmentData)
+       localStorage.setItem("appointmentData",myObj)
+
+       const local = JSON.parse(localStorage.getItem("appointmentData")) 
+       console.log("aaaaaaaaaaaaa",local);
     }
 
     return (
@@ -50,7 +58,7 @@ const Appointment = () => {
                                 <h3>Teeth Orthodontics</h3>
                                 <h5>8:00 Am - 9:00 AM</h5>
                                 <p >10 SPACES AVAILABLE</p>
-                                <a href="/appointmentForm"><button onClick={handleDate} className="my-btn">BOOK APPOINTMENT</button></a>
+                                <a href="/appointmentForm"><button onClick={()=>handleAppointment("Teeth Orthodontics")} className="my-btn">BOOK APPOINTMENT</button></a>
                             </div>
                         </div>
                         <div className="col-md-4">
@@ -58,7 +66,7 @@ const Appointment = () => {
                                 <h3>Cosmetic Dentistry</h3>
                                 <h5>8:00 Am - 9:00 AM</h5>
                                 <p>10 SPACES AVAILABLE</p>
-                                <a href="/appointmentForm"><button onClick={handleDate} className="my-btn">BOOK APPOINTMENT</button></a>
+                                <a href="/appointmentForm"><button onClick={()=>handleAppointment("Cosmetic Dentistry")} className="my-btn">BOOK APPOINTMENT</button></a>
                             </div>
                         </div>
                         <div className="col-md-4">
@@ -66,7 +74,7 @@ const Appointment = () => {
                                 <h3>Teeth Cleaning</h3>
                                 <h5>8:00 Am - 9:00 AM</h5>
                                 <p >10 SPACES AVAILABLE</p>
-                                <a href="/appointmentForm"><button onClick={handleDate} className="my-btn">BOOK APPOINTMENT</button></a>
+                                <a href="/appointmentForm"><button onClick={()=>handleAppointment("Teeth Cleaning")} className="my-btn">BOOK APPOINTMENT</button></a>
                             </div>
                         </div>
                         <div className="col-md-4">
@@ -74,7 +82,7 @@ const Appointment = () => {
                                 <h3>Cavity Protection</h3>
                                 <h5>8:00 Am - 9:00 AM</h5>
                                 <p >10 SPACES AVAILABLE</p>
-                                <a href="/appointmentForm"><button onClick={handleDate} className="my-btn">BOOK APPOINTMENT</button></a>
+                                <a href="/appointmentForm"><button onClick={()=>handleAppointment("Cavity Protection")} className="my-btn">BOOK APPOINTMENT</button></a>
                             </div>
                         </div>
                         <div className="col-md-4">
@@ -82,7 +90,7 @@ const Appointment = () => {
                                 <h3>Teeth Orthodontics</h3>
                                 <h5>8:00 Am - 9:00 AM</h5>
                                 <p >10 SPACES AVAILABLE</p>
-                                <a href="/appointmentForm"><button onClick={handleDate} className="my-btn">BOOK APPOINTMENT</button></a>
+                                <a href="/appointmentForm"><button onClick={()=>handleAppointment("Teeth Orthodontics")} className="my-btn">BOOK APPOINTMENT</button></a>
                             </div>
                         </div>
                         <div className="col-md-4">
@@ -90,7 +98,7 @@ const Appointment = () => {
                                 <h3>Teeth Orthodontics</h3>
                                 <h5>8:00 Am - 9:00 AM</h5>
                                 <p >10 SPACES AVAILABLE</p>
-                                <a href="/appointmentForm"><button onClick={handleDate} className="my-btn">BOOK APPOINTMENT</button></a>
+                                <a href="/appointmentForm"><button onClick={()=>handleAppointment("Teeth Orthodontics")} className="my-btn">BOOK APPOINTMENT</button></a>
                             </div>
                         </div>
   

@@ -8,10 +8,10 @@ const Sidebar = () => {
                 <ul className="sidebar-ul">
                     <li><a href="/"> Home</a></li>
                     <li><a href="/doctor/dashboard"> Dashboard</a></li>
-                    <li><a href="/doctor/appointment"> Appointment</a></li>
+                    <li><a href="/doctor/appointmentList"> Appointment</a></li>
                     <li><a href="/doctor/patients"> Patient</a></li>
                     <li><a href="/doctor/prescription"> Prescription</a></li>
-                     <li><a href="/doctor/siting">Setting</a></li>
+                    <li><a href="/doctor/siting">Setting</a></li>
                 </ul>
             </div>
         </div>

@@ -1,5 +1,5 @@
 .appointment-container {
-    background: #00000036;
+    background: #2196f340;
     padding: 50px;
 }
 .form-area {
@@ -8,11 +8,13 @@
     margin: 50px auto;
     border-radius: 20px;
     padding: 30px 60px;
-    box-shadow: 4px 6px 10px 0px grey;
+    box-shadow: 3px 6px 10px 0px #3c0ef747;
 }
 .appointment-container h3 {
     text-align: center;
     color: #3F51B5;
+    font-size: 35px;
+    text-shadow: 1px 4px 6px #9191d4;
 }
 form.appointment-form input {
     display: block;

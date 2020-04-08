@@ -6,7 +6,6 @@ import './Appointment.css';
 import Nav from '../Nav/Nav';
 
 const Appointment = () => {
-
     const monthNames = ["January", "February", "March", "April", "May", "June",
                 "July", "August", "September", "October", "November", "December"
                 ];
@@ -15,10 +14,13 @@ const Appointment = () => {
     const date = newDate.getDate()
     const month = newDate.getMonth()
     const year = newDate.getFullYear()
-
+    const fullDate = `${date} ${monthNames[month]} ${year}`
 
     const onChange = (date)=> {
         setNewDate(date)
+    }
+    const handleDate = ()=>{
+        console.log("aaaaaaaaaaa",fullDate);
     }
 
     return (
@@ -28,8 +30,8 @@ const Appointment = () => {
                 <div className="row">
                     <div className="col-md-5">
                         <div className="calender">
-                            <h1>Appointment</h1>
-                        <Calendar onChange={onChange} value={newDate} />
+                         <h1>Appointment</h1>
+                         <Calendar onChange={onChange} value={newDate} />
                        </div>
                     </div>
                     <div className="col-md-7">
@@ -40,7 +42,7 @@ const Appointment = () => {
                 </div>
             </div>
             <div className="appointment-area">
-                <h2>Available Appointments on  {date+" "+monthNames[month]+" "+year} </h2>
+                <h2>Available Appointments on  {fullDate} </h2>
                 <div className="container">
                     <div className="row">
                         <div className="col-md-4">
@@ -48,7 +50,7 @@ const Appointment = () => {
                                 <h3>Teeth Orthodontics</h3>
                                 <h5>8:00 Am - 9:00 AM</h5>
                                 <p >10 SPACES AVAILABLE</p>
-                                <button className="my-btn">Add Appointment</button>
+                                <a href="/appointmentForm"><button onClick={handleDate} className="my-btn">BOOK APPOINTMENT</button></a>
                             </div>
                         </div>
                         <div className="col-md-4">
@@ -56,7 +58,7 @@ const Appointment = () => {
                                 <h3>Cosmetic Dentistry</h3>
                                 <h5>8:00 Am - 9:00 AM</h5>
                                 <p>10 SPACES AVAILABLE</p>
-                                <button className="my-btn">Add Appointment</button>
+                                <a href="/appointmentForm"><button onClick={handleDate} className="my-btn">BOOK APPOINTMENT</button></a>
                             </div>
                         </div>
                         <div className="col-md-4">
@@ -64,7 +66,7 @@ const Appointment = () => {
                                 <h3>Teeth Cleaning</h3>
                                 <h5>8:00 Am - 9:00 AM</h5>
                                 <p >10 SPACES AVAILABLE</p>
-                                <button className="my-btn">Add Appointment</button>
+                                <a href="/appointmentForm"><button onClick={handleDate} className="my-btn">BOOK APPOINTMENT</button></a>
                             </div>
                         </div>
                         <div className="col-md-4">
@@ -72,7 +74,7 @@ const Appointment = () => {
                                 <h3>Cavity Protection</h3>
                                 <h5>8:00 Am - 9:00 AM</h5>
                                 <p >10 SPACES AVAILABLE</p>
-                                <button className="my-btn">Add Appointment</button>
+                                <a href="/appointmentForm"><button onClick={handleDate} className="my-btn">BOOK APPOINTMENT</button></a>
                             </div>
                         </div>
                         <div className="col-md-4">
@@ -80,7 +82,7 @@ const Appointment = () => {
                                 <h3>Teeth Orthodontics</h3>
                                 <h5>8:00 Am - 9:00 AM</h5>
                                 <p >10 SPACES AVAILABLE</p>
-                                <button className="my-btn">Add Appointment</button>
+                                <a href="/appointmentForm"><button onClick={handleDate} className="my-btn">BOOK APPOINTMENT</button></a>
                             </div>
                         </div>
                         <div className="col-md-4">
@@ -88,7 +90,7 @@ const Appointment = () => {
                                 <h3>Teeth Orthodontics</h3>
                                 <h5>8:00 Am - 9:00 AM</h5>
                                 <p >10 SPACES AVAILABLE</p>
-                                <button className="my-btn">Add Appointment</button>
+                                <a href="/appointmentForm"><button onClick={handleDate} className="my-btn">BOOK APPOINTMENT</button></a>
                             </div>
                         </div>
   

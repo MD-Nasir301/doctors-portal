@@ -1,0 +1,53 @@
+
+.appointmentList-container {
+    display: flex;
+}
+.sidebar {
+    width: 20%;
+}
+.appointments-list-area {
+    width: 75%;
+}
+.appointments-list-area h4 {
+    margin: 30px 25px;
+}
+.calenderTwo {
+    padding-left: 25px;
+}
+.appointments-list {
+    padding: 30px;
+    box-shadow: -7px 4px 13px 2px #fbeeee;
+}
+.apm-list-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+.apm-list-header {
+    display: flex;
+    justify-content: space-between;
+}
+.apm-list-header span {
+    color: gray;
+    font-weight: 700;
+}
+.apm-list-table table {
+    width: 100%;
+}
+.apm-list-table table tr {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+.apm-list-table table tr th {
+    color: gray;
+}
+.apm-list-table table tr td {
+    font-weight: 700;
+}
+.visit-btn {
+    font-size: 14px;
+    border-radius: 13px;
+    border: none;
+    padding: 7px 19px;
+}

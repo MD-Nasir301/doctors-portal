@@ -40,6 +40,7 @@
 }
 .my-btn:hover {
     color: rgb(238, 221, 221);
+    text-decoration: none;
 }
 .banner-img {
     padding: 70px 85px 0px 0px;

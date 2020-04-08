@@ -1,6 +1,7 @@
 import React from 'react';
 import './AppointmentForm.css'
 import { useForm } from 'react-hook-form'
+import Nav from '../Nav/Nav';
 
 const AppointmentForm = () => {
 
@@ -9,6 +10,7 @@ const AppointmentForm = () => {
 
     return (
         <div className="appointment-container">
+            <Nav></Nav>
                 <h3> Appointment Information</h3>
             <div className="form-area">
                     <form className="appointment-form" onSubmit={handleSubmit(onSubmit)}>

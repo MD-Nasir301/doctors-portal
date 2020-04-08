@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import Banner from './Component/Banner/Banner';
 import Home from './Component/Home/Home';
 import Appointment from './Component/Appointment/Appointment';
 import AppointmentForm from './Component/AppointmentForm/AppointmentForm';
+import AppointmentList from './Component/AppointmentList/AppointmentList';
+import Dashboard from './Component/Dashboard/Dashboard';
+
 
 
 function App() {
@@ -19,6 +21,12 @@ function App() {
         </Route>
         <Route path="/appointmentForm">
           <AppointmentForm></AppointmentForm>
+        </Route>
+        <Route path="/doctor/appointmentList">
+          <AppointmentList></AppointmentList>
+        </Route>
+        <Route path="/doctor/dashboard">
+          <Dashboard></Dashboard>
         </Route>
 
       </Router>

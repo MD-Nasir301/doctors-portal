@@ -1,0 +1,23 @@
+.sidebar-area {
+    background: #17D2B7;
+    min-height: 100vh;
+}
+
+ul.sidebar-ul {
+    padding: 60px 40px;
+}
+
+ul.sidebar-ul li {
+    list-style: none;
+}
+ul.sidebar-ul li a {
+    font-size: 18px;
+    font-weight: 600;
+    display: inline-block;
+    padding: 10px 0px;
+    color: white;
+}
+ul.sidebar-ul li a:hover {
+    color: gray;
+    text-decoration: none;
+}

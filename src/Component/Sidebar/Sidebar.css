@@ -1,9 +1,11 @@
 .sidebar-area {
-    background: #17D2B7;
+    background: linear-gradient(to bottom, #18d2ae 36%,#53cbf1 89%,#0fcfea 100%);
     min-height: 100vh;
     position: fixed;
     width: 20%;
 }
+
+
 
 ul.sidebar-ul {
     padding: 60px 40px;

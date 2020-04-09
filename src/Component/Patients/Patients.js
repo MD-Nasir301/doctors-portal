@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Sidebar from '../Sidebar/Sidebar';
 
 const Patients = () => {
+  const [patients, setPatients] = useState()
+  const [loading, setLoading] = useState(true)
+
+  useEffect(()=> {
+    fetch('http://localhost:3300/appointments')
+    .then(res => res.json())
+    .then(data => {
+      setPatients(data)
+      setLoading(false)
+    })
+  },[])
+
+
+
     return (
 <div className="page-wrapper">
       <div className="sidebar">
@@ -27,15 +41,24 @@ const Patients = () => {
                   <th>Prescription</th>
                   <th>Action</th>
                 </tr>
-                <tr>
-                    <td>01</td>
-                    <td>24 February 2020</td>
-                    <td>07:12 PM</td>
-                    <td>Karim Ahmed</td>
-                    <td>01715-03064510</td>
+                {
+                  loading && <p style={{textAlign:'center',fontSize:'25px'}} >Loading...</p>
+                }
+
+                {
+                  patients && patients.map(data =>
+                   <tr>
+                    <td> {(patients.indexOf(data)+1)} </td>
+                    <td> {data.date} </td>
+                    <td> {data.time} </td>
+                    <td> {data.name} </td>
+                    <td> {data.phone} </td>
                     <td><button className="my-btn btn2">View</button></td>
                     <td><button className="my-btn btn2">Action</button></td>
-                </tr>
+                </tr>)
+                }
+
+
               </table>
             </div>
           </div>

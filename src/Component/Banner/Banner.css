@@ -30,7 +30,7 @@
 }
 .my-btn {
     padding: 10px 20px;
-    background: #9191d4;
+    background: linear-gradient(to right, #18d2ae 0%,#53cbf1 67%,#0fcfea 100%);
     color: #fff;
     font-weight: 700;
     letter-spacing: 1px;

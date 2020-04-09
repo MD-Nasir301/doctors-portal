@@ -24,7 +24,8 @@ const AppointmentList = () => {
   const year = newDate.getFullYear();
   const fullDate = `${date} ${monthNames[month]} ${year}`;
 
-  const [loading , setLoading] = useState()
+  const [loading , setLoading] = useState(true)
+  
   const onChange = (getDate) => {
     setNewDate(getDate);
     setLoading(true)
@@ -69,7 +70,7 @@ const AppointmentList = () => {
                       <th>Action</th>
                     </tr>
                     {
-                      loading ? <p style={{display:'block'}}>Loading...</p> : <p style={{display:'none'}}>Loading...</p>
+                      loading && <p style={{display:'block'}}>Loading...</p> 
                     }
 
                     {

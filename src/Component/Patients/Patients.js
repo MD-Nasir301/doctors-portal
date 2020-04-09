@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Sidebar from '../Sidebar/Sidebar';
 
 const Patients = () => {
+  
   const [patients, setPatients] = useState()
   const [loading, setLoading] = useState(true)
 
@@ -13,8 +14,6 @@ const Patients = () => {
       setLoading(false)
     })
   },[])
-
-
 
     return (
 <div className="page-wrapper">

@@ -23,11 +23,12 @@ const AppointmentList = () => {
   const month = newDate.getMonth();
   const year = newDate.getFullYear();
   const fullDate = `${date} ${monthNames[month]} ${year}`;
-
-  const [loading , setLoading] = useState(true)
   
-  const onChange = (getDate) => {
-    setNewDate(getDate);
+  
+  const [loading , setLoading] = useState(true)
+
+  const onChange = (getNewDate) => {
+    setNewDate(getNewDate);
     setLoading(true)
   };
 

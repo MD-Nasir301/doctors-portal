@@ -4,13 +4,14 @@ import 'react-calendar/dist/Calendar.css';
 import img from '../../images/Mask Group 1.png'
 import './Appointment.css';
 import Nav from '../Nav/Nav';
-import { getDatabaseCart } from '../../utilities/databaseManager';
 
 const Appointment = () => {
     const monthNames = ["January", "February", "March", "April", "May", "June",
                 "July", "August", "September", "October", "November", "December"
                 ];
+
     const [newDate,setNewDate] = useState(new Date())
+
     const date = newDate.getDate()
     const month = newDate.getMonth()
     const year = newDate.getFullYear()
@@ -21,14 +22,11 @@ const Appointment = () => {
     }
 
     let appointmentData = {"date":fullDate}
+
     const handleAppointment = (appointment)=>{
-        appointmentData.appointmentName= appointment
-
-       let myObj = JSON.stringify(appointmentData)
-       localStorage.setItem("appointmentData",myObj)
-
-       const local = JSON.parse(localStorage.getItem("appointmentData")) 
-       console.log("aaaaaaaaaaaaa",local);
+        appointmentData.appointmentName = appointment
+        let apmNameAndDate = JSON.stringify(appointmentData)
+        localStorage.setItem("appointmentData",apmNameAndDate)
     }
 
     return (

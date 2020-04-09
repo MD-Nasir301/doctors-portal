@@ -4,13 +4,13 @@ import { useForm } from 'react-hook-form'
 import Nav from '../Nav/Nav';
 
 const AppointmentForm = () => {
+  
     const appointmentInfo = JSON.parse(localStorage.getItem("appointmentData")) 
     const { register, handleSubmit, watch, errors } = useForm()
 
     const [addAppointmentId, setAddAppointmentId] = useState()
     const [sending, setSending] = useState()
     
-
     const onSubmit = appointmentData => { 
         fetch("http://localhost:3300/bookAppointment", {
           method: "post",

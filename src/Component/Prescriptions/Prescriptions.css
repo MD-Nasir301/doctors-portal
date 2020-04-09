@@ -1,0 +1,16 @@
+.prescription-area textarea {
+    margin: 0 auto;
+    width: 30%;
+    display: block;
+    min-height: 200px;
+    padding: 15px;
+    font-size: 17px;
+    color: gray;
+    border: 2px solid #673ab78c;
+    border-radius: 5px 5px 45px 0px;
+}
+.center {
+    width: 117px;
+    margin-top: 20px;
+    margin-left: 470px;
+}

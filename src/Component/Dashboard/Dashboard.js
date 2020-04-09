@@ -5,9 +5,14 @@ const Dashboard = () => {
   const monthNames = ["January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December"
   ];
-    const [appointments, setAppointments] = useState([])
-    const [last15, setLast15] = useState([])
+
+    const [last15Appointments, setLast15Appointments] = useState([])  
+    const [allAppointments, setAllAppointment] = useState([])
+    const [last15Date, setLast15Date] = useState([])
+
+    const [recentData, setRecentData] = useState(true)
     const [loading, setLoading] = useState(true)
+    const [loadingAll, setLoadingAll] = useState(false)
 
     const newDate = new Date()
     const date = newDate.getDate();
@@ -15,24 +20,35 @@ const Dashboard = () => {
     const year = newDate.getFullYear();
     const fullDate = `${date} ${monthNames[month]} ${year}`;
 
-    const allDate =  appointments.map(dt => dt.date)
+    const allDate =  last15Appointments.map(dt => dt.date)
     const todayDates =  allDate.filter(dt => dt === fullDate);
-
-      
-    
 
     useEffect(()=>{
         fetch('http://localhost:3300/appointments')
         .then(res => res.json())
         .then(data => {
           const last15 = data.slice(Math.max(data.length - 15, 0))
-            setAppointments(data)
-            setLast15(last15.reverse())
+            setLast15Appointments(data)
+            setLast15Date(last15.reverse())
             setLoading(false)
         })
     },[])
+    
+    const allData = ()=> {
+        setLoadingAll(true)
+        fetch('http://localhost:3300/appointments')
+        .then(res => res.json())
+        .then(data => {
+          setAllAppointment(data)
+          setLoading(false)
+          setLoadingAll(false)
+          setRecentData(false)
+        })
+    }
 
-
+    const recentAppointments = ()=> {
+      window.location.reload();
+    }
 
 
   return (
@@ -49,7 +65,7 @@ const Dashboard = () => {
               <div className="apm-status-box pending-apm">
                 <div className="row">
                   <div className="col-md-5">
-                    <h1>--</h1>
+                    <h1>05</h1>
                   </div>
                   <div className="col-md-6">
                     <p>Pending</p>
@@ -78,7 +94,7 @@ const Dashboard = () => {
                 <div className="row">
                   <div className="col-md-5">
                     {
-                      loading ? <span className="loading">Loading...</span> :<h1> {appointments.length} </h1>
+                      loading ? <span className="loading">Loading...</span> :<h1> {last15Appointments.length} </h1>
                     }
                   </div>
                   <div className="col-md-6">
@@ -93,7 +109,7 @@ const Dashboard = () => {
                 <div className="row">
                   <div className="col-md-5">
                   {
-                    loading ? <span className="loading">Loading...</span> :<h1> {appointments.length} </h1>
+                    loading ? <span className="loading">Loading...</span> :<h1> {last15Appointments.length} </h1>
                   }
                   </div>
                   <div className="col-md-6">
@@ -107,7 +123,9 @@ const Dashboard = () => {
         </div>
         <div className="recent-appointment">
           <div className="recent-apm-heading d-flex justify-content-between">
-            <p>Recent Appointment (15)</p>
+            {
+              recentData ? <p>Recent Appointments (15)</p> : <p>All Appointments</p>
+            }
             <p>Week</p>
           </div>
           <div className="recent-apm-table-area">
@@ -123,11 +141,11 @@ const Dashboard = () => {
                   <th>Action</th>
                 </tr>
                 {
-                    loading &&  <h4 style={{textAlign: 'center' }}> Loading.... </h4>
+                  loading &&  <h4 style={{textAlign: 'center' }}> Loading.... </h4>
                 }
                 {
-                    last15.map(apm =>  <tr className="apmRow">
-                                                <td> {(last15.indexOf(apm)+1)}</td>
+                 recentData &&   last15Date.map(apm =>  <tr className="apmRow">
+                                                <td> {(last15Date.indexOf(apm)+1)}</td>
                                                 <td> {apm.date} </td>
                                                 <td> {apm.time} PM</td>
                                                 <td> {apm.name} </td>
@@ -136,9 +154,29 @@ const Dashboard = () => {
                                                 <td><button className="my-btn btn2">Action</button></td>
                                             </tr>
                                         )
+                } 
+     
+                {
+                  allAppointments.map(apm =>  <tr className="apmRow">
+                                                <td> {(allAppointments.indexOf(apm)+1)}</td>
+                                                <td> {apm.date} </td>
+                                                <td> {apm.time} PM</td>
+                                                <td> {apm.name} </td>
+                                                <td> {apm.phone} </td>
+                                                <td><button className="my-btn btn2">View</button></td>
+                                                <td><button className="my-btn btn2">Action</button></td>
+                                            </tr>
+                                        )
+                } 
+                {
+                  loadingAll && <p>Loading...</p>
                 }
-                        
-
+                {
+                  !loading && allAppointments.length === 0 && <button className="my-btn all-data-btn" onClick={allData}>All Appointments</button>
+                } 
+                {
+                  allAppointments.length > 0 && <button className="my-btn all-data-btn" onClick={recentAppointments}>Hide</button>
+                }
               </table>
             </div>
           </div>

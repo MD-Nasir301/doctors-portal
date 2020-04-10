@@ -26,7 +26,7 @@ const Dashboard = () => {
     const todayDates =  allDate.filter(dt => dt === fullDate);
 
     useEffect(()=>{
-        fetch('http://localhost:3200/appointments')
+        fetch('https://doctorportalbackend.herokuapp.com/appointments')
         .then(res => res.json())
         .then(data => {
           const last15 = data.slice(Math.max(data.length - 15, 0))
@@ -38,7 +38,7 @@ const Dashboard = () => {
     
     const allData = ()=> {
         setLoadingAll(true)
-        fetch('http://localhost:3200/appointments')
+        fetch('https://doctorportalbackend.herokuapp.com/appointments')
         .then(res => res.json())
         .then(data => {
           setAllAppointment(data)
@@ -62,12 +62,49 @@ const Dashboard = () => {
       localStorage.setItem('patientData', patientDataStorage)
     }
 
+    const [prescriptionsId, setPrescriptionsId] = useState({})
+
+    const [prescriptions, setPrescriptions] = useState()
+    const [medicine,setMedicine ] = useState()
+    const [hide,setHide ] = useState(true)
+
+
+    useEffect(()=> {
+        fetch('https://doctorportalbackend.herokuapp.com/prescriptions')
+        .then(res => res.json())
+        .then(data => {
+            setPrescriptions(data)
+            setPrescriptionsId(data.map(id => id.id))
+
+        })
+    },[])
+
+    const showPrescription = (presId)=>{
+      console.log("idddddddd", presId);
+      if(prescriptions){
+       const data = prescriptions.find(id => id.id === presId ) 
+        setMedicine(data)
+        setHide(false)
+         
+      }
+    }
+    const handleHide = ()=>{
+      setHide(true)
+    }
 
   return (
     <div className="page-wrapper">
       <div className="sidebar">
         <Sidebar></Sidebar>
       </div>
+      {
+        !hide &&
+        <div className="prescription">
+          <h4> {medicine && medicine.name} </h4> 
+          <textarea name="" value={ medicine && medicine.medicine}></textarea>
+          <button onClick={handleHide} className="my-btn">Hide</button>
+        </div>
+      }
 
       <div className="dashboard-area">
         <h4>Dashboard</h4>
@@ -162,7 +199,10 @@ const Dashboard = () => {
                                                 <td> {apm.time} PM</td>
                                                 <td> {apm.name} </td>
                                                 <td> {apm.phone} </td>
-                                                <td><button className="my-btn btn2">View</button></td>
+                                                {
+                                                 prescriptionsId.length > 0 && prescriptionsId.find(id => id === apm._id) ?<td><button onClick={()=>showPrescription(apm._id)} className="my-btn btn2">View</button></td> : <h6>Not added</h6>
+                                                }
+                                                
                                                 <td className="select-action">
                                                   <select className="my-btn btn2 select-btn">
                                                     <option value="saab">Action</option>
@@ -183,7 +223,10 @@ const Dashboard = () => {
                                                 <td> {apm.time} PM</td>
                                                 <td> {apm.name} </td>
                                                 <td> {apm.phone} </td>
-                                                <td><button className="my-btn btn2">View</button></td>
+                                                {
+                                                 prescriptionsId.length > 0 && prescriptionsId.find(id => id === apm._id) ?<td><button onClick={()=>showPrescription(apm._id)} className="my-btn btn2">View</button></td> : <h6>Not added</h6>
+                                                }
+                                                
                                                 <td className="select-action">
                                                   <select className="my-btn btn2 select-btn">
                                                     <option value="saab">Action</option>

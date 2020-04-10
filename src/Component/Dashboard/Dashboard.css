@@ -122,3 +122,29 @@ select option {
     font-weight: 600;
     line-height: 50px;
 }
+.prescription {
+    width: 400px;
+    min-height: 316px;
+    padding: 40px 20px;
+    background: #B3E5FC;
+    position: fixed;
+    top: 17px;
+    z-index: 9999;
+    left: 33%;
+    border-radius: 10px;
+
+}
+.prescription h4 {
+    color: rgba(15, 34, 15, 0.979);
+}
+.prescription button {
+    margin-left: 20px;
+}
+.prescription textarea {
+    height: 200px;
+    width: 90%;
+    resize: none;
+}
+.prescription button {
+    margin-left: 0px;
+}

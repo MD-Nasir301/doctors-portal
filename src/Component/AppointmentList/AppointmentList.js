@@ -34,7 +34,7 @@ const AppointmentList = () => {
 
   const [appointments, setAppointments] = useState();
   useEffect(() => {
-    fetch("http://localhost:3200/appointments/" + fullDate)
+    fetch("https://doctorportalbackend.herokuapp.com/appointments/" + fullDate)
       .then((res) => res.json())
       .then((data) => {
         setAppointments(data);

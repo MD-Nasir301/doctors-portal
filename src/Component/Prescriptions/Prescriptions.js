@@ -15,7 +15,7 @@ const Prescriptions = () => {
         prescription.id = patientData.patientId;
         prescription.name = patientData.patientName;
         prescription.medicine = value
-        fetch('http://localhost:3200/addPrescription',{
+        fetch('https://doctorportalbackend.herokuapp.com/addPrescription',{
             method: "post",
             body: JSON.stringify(prescription),
             headers: {

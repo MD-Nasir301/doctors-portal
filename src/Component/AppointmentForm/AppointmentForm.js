@@ -12,7 +12,7 @@ const AppointmentForm = () => {
     const [sending, setSending] = useState()
     
     const onSubmit = appointmentData => { 
-        fetch("http://localhost:3200/bookAppointment", {
+        fetch("https://doctorportalbackend.herokuapp.com/bookAppointment", {
           method: "post",
           body: JSON.stringify(appointmentData),
           headers: {

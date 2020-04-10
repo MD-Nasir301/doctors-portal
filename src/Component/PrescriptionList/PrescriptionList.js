@@ -8,7 +8,7 @@ const PrescriptionList = () => {
     const [loading, setLoading] = useState(true)
 
     useEffect(()=> {
-        fetch('http://localhost:3200/prescriptions')
+        fetch('https://doctorportalbackend.herokuapp.com/prescriptions')
         .then(res => res.json())
         .then(data => {
             setPrescription(data.reverse())

@@ -7,7 +7,7 @@ const Patients = () => {
   const [loading, setLoading] = useState(true)
 
   useEffect(()=> {
-    fetch('http://localhost:3200/appointments')
+    fetch('https://doctorportalbackend.herokuapp.com/appointments')
     .then(res => res.json())
     .then(data => {
       setPatients(data)

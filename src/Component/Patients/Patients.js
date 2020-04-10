@@ -7,7 +7,7 @@ const Patients = () => {
   const [loading, setLoading] = useState(true)
 
   useEffect(()=> {
-    fetch('http://localhost:3300/appointments')
+    fetch('http://localhost:3200/appointments')
     .then(res => res.json())
     .then(data => {
       setPatients(data)

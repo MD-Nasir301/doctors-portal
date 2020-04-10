@@ -1,16 +1,36 @@
 .prescription-area textarea {
     margin: 0 auto;
-    width: 30%;
+    width: 27%;
     display: block;
-    min-height: 200px;
+    min-height: 290px;
     padding: 15px;
     font-size: 17px;
     color: gray;
     border: 2px solid #673ab78c;
-    border-radius: 5px 5px 45px 0px;
+    border-radius: 5px 5px 30px 0px;
 }
-.center {
+.btn-center {
     width: 117px;
     margin-top: 20px;
-    margin-left: 470px;
+    margin-left: 455px;
+}
+.patient-info {
+    display: flex;
+    justify-content: center;
+}
+
+.patient-info p {
+    font-size: 23px;
+    margin: 20px 15px;
+    font-weight: 500;
+    color: rgb(85, 112, 126);
+}
+.sending-info{
+    color: #7CB342;
+    text-align: center;
+    font-size: 20px;
+    min-height: 35px;
+}
+.patient-info span {
+    color: rgb(38, 173, 240);
 }

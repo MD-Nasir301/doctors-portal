@@ -6,13 +6,13 @@ import Nav from '../Nav/Nav';
 const AppointmentForm = () => {
   
     const appointmentInfo = JSON.parse(localStorage.getItem("appointmentData")) 
-    const { register, handleSubmit, watch, errors } = useForm()
+    const { register, handleSubmit, errors } = useForm()
 
     const [addAppointmentId, setAddAppointmentId] = useState()
     const [sending, setSending] = useState()
     
     const onSubmit = appointmentData => { 
-        fetch("http://localhost:3300/bookAppointment", {
+        fetch("http://localhost:3200/bookAppointment", {
           method: "post",
           body: JSON.stringify(appointmentData),
           headers: {
@@ -40,9 +40,11 @@ const AppointmentForm = () => {
                 
             <div className="form-area">
                     <form id="form" className="appointment-form" onSubmit={handleSubmit(onSubmit)}>
-                        <p>{appointmentInfo.appointmentName} </p>
+                    <p>{appointmentInfo.appointmentName} </p>
                     <input name="time" type="time" id="timepicker"  defaultValue="" ref={register({ required: true })} />
                     <input name="name" placeholder="Your name"  ref={register({ required: true })} />
+                    <input name="age" type="Number" placeholder="Your age"  ref={register({ required: true })} />
+                    <input name="problem" value={appointmentInfo.appointmentName} style={{display:'none'}}  ref={register({ required: true })} />
                     <input name="phone" placeholder="Phone Number"  type="tel" ref={register({ required: true })} />
                     <input name="email" placeholder="Email"  type="email" ref={register({ required: true })} />
                     <input name="date"  value={appointmentInfo.date} ref={register({ required: true })} />

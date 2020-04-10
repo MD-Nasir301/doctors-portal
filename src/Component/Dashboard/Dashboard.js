@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Dashboard.css";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPen } from '@fortawesome/free-solid-svg-icons'
 import Sidebar from "../Sidebar/Sidebar";
 const Dashboard = () => {
   const monthNames = ["January", "February", "March", "April", "May", "June",
@@ -24,7 +26,7 @@ const Dashboard = () => {
     const todayDates =  allDate.filter(dt => dt === fullDate);
 
     useEffect(()=>{
-        fetch('http://localhost:3300/appointments')
+        fetch('http://localhost:3200/appointments')
         .then(res => res.json())
         .then(data => {
           const last15 = data.slice(Math.max(data.length - 15, 0))
@@ -36,7 +38,7 @@ const Dashboard = () => {
     
     const allData = ()=> {
         setLoadingAll(true)
-        fetch('http://localhost:3300/appointments')
+        fetch('http://localhost:3200/appointments')
         .then(res => res.json())
         .then(data => {
           setAllAppointment(data)
@@ -48,6 +50,16 @@ const Dashboard = () => {
 
     const recentAppointments = ()=> {
       window.location.reload();
+    }
+
+    let patientData = {}
+    const addPrescription = (name,problem,age,id)=>{
+      patientData.patientName = name
+      patientData.patientProblem = problem
+      patientData.patientAge = age
+      patientData.patientId = id
+      const patientDataStorage = JSON.stringify(patientData)
+      localStorage.setItem('patientData', patientDataStorage)
     }
 
 
@@ -151,7 +163,15 @@ const Dashboard = () => {
                                                 <td> {apm.name} </td>
                                                 <td> {apm.phone} </td>
                                                 <td><button className="my-btn btn2">View</button></td>
-                                                <td><button className="my-btn btn2">Action</button></td>
+                                                <td className="select-action">
+                                                  <select className="my-btn btn2 select-btn">
+                                                    <option value="saab">Action</option>
+                                                    <option value="saab">Pending</option>
+                                                    <option value="opel">Approved</option>
+                                                    <option style={{background:'red'}} value="audi">Cancelled</option>
+                                                  </select>
+                                                  <a href="/doctor/prescription"> <button className="edit-btn"  onClick={()=>addPrescription(apm.name,apm.problem,apm.age,apm._id)}> <FontAwesomeIcon icon={faPen} /> </button></a>
+                                                </td>
                                             </tr>
                                         )
                 } 
@@ -164,7 +184,15 @@ const Dashboard = () => {
                                                 <td> {apm.name} </td>
                                                 <td> {apm.phone} </td>
                                                 <td><button className="my-btn btn2">View</button></td>
-                                                <td><button className="my-btn btn2">Action</button></td>
+                                                <td className="select-action">
+                                                  <select className="my-btn btn2 select-btn">
+                                                    <option value="saab">Action</option>
+                                                    <option value="saab">Pending</option>
+                                                    <option value="opel">Approved</option>
+                                                    <option style={{background:'red'}} value="audi">Cancelled</option>
+                                                  </select>
+                                                  <a href="/doctor/prescription"> <button className="edit-btn"  onClick={()=>addPrescription(apm.name,apm.problem,apm.age,apm._id)}> <FontAwesomeIcon icon={faPen} /> </button></a>
+                                                </td>
                                             </tr>
                                         )
                 } 

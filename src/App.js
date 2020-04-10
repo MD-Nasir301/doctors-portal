@@ -10,6 +10,7 @@ import Patients from "./Component/Patients/Patients";
 import Prescriptions from "./Component/Prescriptions/Prescriptions";
 import NotFound from "./Component/NotFound/NotFound";
 import Nav from "./Component/Nav/Nav";
+import PrescriptionList from "./Component/PrescriptionList/PrescriptionList";
 
 function App() {
   return (
@@ -37,6 +38,9 @@ function App() {
           <Route path="/doctor/prescription">
             <Nav></Nav>
             <Prescriptions></Prescriptions>
+          </Route>
+          <Route path="/doctor/prescriptionList">
+            <PrescriptionList></PrescriptionList>
           </Route>
           <Route path="*/">
             <NotFound></NotFound>

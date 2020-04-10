@@ -34,7 +34,7 @@ const AppointmentList = () => {
 
   const [appointments, setAppointments] = useState();
   useEffect(() => {
-    fetch("http://localhost:3300/appointments/" + fullDate)
+    fetch("http://localhost:3200/appointments/" + fullDate)
       .then((res) => res.json())
       .then((data) => {
         setAppointments(data);

@@ -1,0 +1,35 @@
+.prescription-area {
+    padding: 55px;
+}
+
+.prescription-box {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px 8px 30px 8px;
+    box-shadow: 1px -1px 7px 0px #8080807d;
+    margin-bottom: 25px;
+
+}
+
+.prescription-box h5 {
+    padding: 2px;
+    font-size: 21px;
+    color: #a600ff;
+}
+.prescription-box h6 {
+    font-size: 15px;
+}
+.prescription-box textarea {
+    border: none;
+    width: 100%;
+    background: #66339905;
+    border-radius: 3px;
+    min-height: 150px;
+    font-size: 17px;
+    font-weight: 500;
+    color: #607D8B;
+    resize: none;
+}
+.prescription-box textarea:focus {
+    outline: none;
+}

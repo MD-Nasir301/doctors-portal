@@ -1,7 +1,9 @@
 .page-wrapper {
     display: flex;
 }
-
+.dashboard-area h4 {
+    margin-bottom: 20px;
+}
 .recent-appointment, .all-patient {
     padding: 20px 50px;
     width: 105%;
@@ -78,17 +80,41 @@ table.recent-apm-table tr td,.all-patients-table tr td {
 tr.apmRow td {
     width: 125px;
 }
+td.select-action {
+    display: flex;
+}
 .btn2 {
     border: none;
-    padding: 4px 15px;
-    float: right;
+    padding: 4px 14px;
+    float: left;
     margin-right: 10px;
+}
+button.edit-btn {
+    background: #fde549c7;
+    color: #6c0f9e;
+    /* border: none; */
+    /* height: 29px; */
 }
 button.my-btn.all-data-btn {
     font-size: 15px;
     border: 1px dashed;
     border-radius: 5px;
     margin: 10px 0px;
+}
+button.my-btn.btn2 {
+    float: right;
+    margin-right: 20px;
+}
+.btn2.my-btn.select-btn {
+    width: 106px;
+    padding: 3px;
+    color: #fff;
+    font-size: 15px;
+}
+select option {
+    color: #ffffff;
+    background: #24ceed;
+    font-weight: 500;
 }
 .loading {
     color: #ffffff;

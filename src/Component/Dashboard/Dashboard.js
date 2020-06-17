@@ -11,6 +11,7 @@ const Dashboard = () => {
     const [last15Appointments, setLast15Appointments] = useState([])  
     const [allAppointments, setAllAppointment] = useState([])
     const [last15Date, setLast15Date] = useState([])
+    console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaa", last15Date)
 
     const [recentData, setRecentData] = useState(true)
     const [loading, setLoading] = useState(true)
@@ -179,6 +180,7 @@ const Dashboard = () => {
           </div>
           <div className="recent-apm-table-area">
             <div className="row">
+              
               <table className="recent-apm-table">
                 <tr>
                   <th>Sr.No</th>

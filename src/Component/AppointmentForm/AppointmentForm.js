@@ -32,7 +32,7 @@ const AppointmentForm = () => {
         <div className="appointment-container">
             <Nav></Nav>
             {
-               addAppointmentId ? <div className="apm-success"> <h3>Your Appointment Send Successfully.</h3> <h5>Your Appointment ID : {addAppointmentId} </h5> </div> : <h3>Appointment Information</h3> 
+               addAppointmentId ? <div className="apm-success"> <h3>Your Appointment Sent Successfully.</h3> <h5>Your Appointment ID : {addAppointmentId} </h5> </div> : <h3>Appointment Information</h3> 
             }
             {
                 sending && <p className="sending">Sending....</p>
